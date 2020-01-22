@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Notfound";
+    string url = ViewBag.url;
+}
+
+<h1>Error Page Not Found</h1>
+<h4>"@url" not found</h4>
+@Html.ActionLink("Return to Home Page", "Index", "Home")
+
