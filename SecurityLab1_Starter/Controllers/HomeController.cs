@@ -13,6 +13,7 @@ namespace SecurityLab1_Starter.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,6 +21,7 @@ namespace SecurityLab1_Starter.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -27,6 +29,7 @@ namespace SecurityLab1_Starter.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult GenError()
         {
             throw new DivideByZeroException();

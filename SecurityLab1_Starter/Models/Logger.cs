@@ -22,6 +22,15 @@ namespace SecurityLab1_Starter.Models
             w.Close();
         }
 
+        public static void UserLoginLogout(string username, string message)
+        {
+            TextWriter w = File.AppendText("C:\\Users\\ekjoh\\Desktop\\School\\Year4\\Semester 6\\Security\\420-613-LA-Security-Lab1-Starter-master\\SecurityLab1_Starter\\Util\\useraccess.csv");
+            w.WriteLine(username + ", " + message + ", " + DateTime.Now.ToShortTimeString() + ", " + DateTime.Now.ToShortDateString());
+            w.Close();
+
+
+        }
+
         public static void LogToEventViewer(EventLogEntryType type, String text)
         {
             using (EventLog eventLog = new EventLog("Application"))

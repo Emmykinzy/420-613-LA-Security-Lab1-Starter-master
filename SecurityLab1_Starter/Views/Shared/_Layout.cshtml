@@ -21,8 +21,18 @@
                 <li>@Html.ActionLink("Inventory Pricing", "Index", "Inventory", null, new { @class = "nav-item nav-link" })</li>
             </ul>
         </div>
+        @if (Session["auth"] == null || (bool)Session["auth"] == false)
+        {
+            @Html.ActionLink("LOG IN", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+        }
+        else
+        {
+            string name = HttpContext.Current.User.Identity.Name;
+            @Html.ActionLink(name, "Logoff", "Account", new { Username = name }, new { @class = "navbar-brand" })
+        }
+
     </nav>
-    </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />

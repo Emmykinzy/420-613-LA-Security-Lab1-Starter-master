@@ -11,17 +11,21 @@ namespace SecurityLab1_Starter.Controllers
     {
 
         // GET: Inventory
+        
+        [Authorize (Users = "testuser2")]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult GenError()
         {
             throw new DivideByZeroException();
             return View();
         }
 
+        [Authorize]
         protected override void OnException(ExceptionContext filterContext)
         {
 
